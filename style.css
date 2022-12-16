@@ -1,0 +1,25 @@
+.header {
+    color: #1c4f91;
+}
+
+body {
+    font-size: 1rem;
+    color: #000000;
+    font-family: monospace;
+
+    background-color: #232029;
+}
+
+h1{
+    color: #ffffff;
+    font-size: 150px;
+}
+
+.centreVertical {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 500px;;
+    border: 2px 
+}
+
