@@ -7,12 +7,13 @@ body {
     color: #000000;
     font-family: monospace;
 
-    background-color: #232029;
+    background-color: #212029;
 }
 
 h1{
     color: #ffffff;
     font-size: 150px;
+    padding-left: 50px;
 }
 
 .centreVertical {
