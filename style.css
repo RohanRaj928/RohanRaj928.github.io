@@ -13,16 +13,6 @@ body {
     
 }
 
-h1{
-    color: #383838;
-    font-size: 100px;
-    width:fit-content;
-    height: fit-content;
-
-    display: flex;
-    align-self: center;
-}
-
 p {
     background: #f2f2f2;
     width: fit-content;
@@ -30,6 +20,7 @@ p {
 
 /* Classes */
 .n_raised {
+    /* Neumorphic raised card effect */
     border-radius: 50px;
     background: #f2f2f2;
     box-shadow:  20px 20px 60px #cecece,
@@ -54,6 +45,37 @@ p {
 
 
 #intro > div{
+    /* Ensures that Rohan Raj label is slightly above center */
     height: 75%;
     display: flex;
+}
+
+#intro > div > div{
+    display: flex;
+    align-self: center;
+    height: 150px;
+
+    transition: 0.15s;
+}
+
+#intro > div > div >h1{
+    /* Rohan Raj Label */
+
+    /* Font */
+    color: #383838;
+    font-size: 100px;
+    width:fit-content;
+    height: fit-content;
+
+    /* Alignment */
+
+    margin: 10px;
+}
+
+
+
+
+
+#intro > div > div:hover {
+    height: 220px;
 }
