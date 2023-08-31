@@ -1,7 +1,11 @@
+:root{
+    --main-bg-color: #3B4252;
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #4C566A;
+    background-color: var(--main-bg-color);
 
 }
 
@@ -18,7 +22,7 @@ body {
 
     /* Text Style */
     text-align: center;
-    color: rgb(69, 76, 86);
+    color: var(--main-bg-color);
 
     /* Background Styles */
     background-image: url('images/hero.jpg');
@@ -29,53 +33,106 @@ body {
 }
 
 .hero h1{
+    /* Text Style */
     font-size: 5em;
 
+    /* Position */
     position: absolute;
     left: 200px;
     top: 200px;
 }
 
-#skills{
-    align-items: center;
-    display: flex;
-    height: 100vh;
-    margin: 0px;
-    overflow: hidden;
-    padding: 0px;
-    justify-content: center;
+h2{
+    font-weight: bold;
+    color: white;
+    font-size: 5em;
+    rotate: deg;
 }
 
+#skills{
+    /* Sizing */
+    height: fit-content;
+
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 
 #cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    max-width: 929px;
-    width: calc(100% - 20px);
+    /* Sizing */
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 70%;
+    height: 70%;
+
+    /* Grid */
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+
 }
 
-
-.card {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 2px solid rgb(255, 255, 255, 0.1);
-    border-radius: 10px;
-    cursor: pointer;
-
+.card{
     position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
 
-    width: 300px;
-    height: 260px;
+    /* Border */
+    border-style:solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    /* Sizing */
+    min-width: 200px;
+    aspect-ratio: 1.4;
+    display: block;
+
+    overflow: visible;
 }
 
-.card::before{
-    background: radial-gradient(800px circle at 100px 100px, rgba(255, 255, 255, 0.06), transparent 40%);
-
-    border-radius: inherit;
-    content: "";
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
-    width: 100%;
+.card:hover{
+    transform: scale(1.1);
 }
+
+
+
+.card-title{
+
+    border-style: solid;
+    border-width: 5px;
+    border: black;
+
+    position:absolute;
+    top: 30px;
+    left: 50px;
+
+    /* Text Style */
+    /* background: -webkit-linear-gradient(0deg, #88C0D0, #8FBCBB);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    color: white !important;
+
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.card > p{
+    color: rgb(204, 204, 204);
+}
+
+
+
+.card > img{
+    opacity: 08;
+    height: 100px;
+    width: auto;
+}
+
+
