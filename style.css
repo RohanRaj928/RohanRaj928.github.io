@@ -1,138 +1,171 @@
 :root{
-    --main-bg-color: #3B4252;
+    --heading-color: #383838;
+
+    --background-color: #ebebeb;
+    --accent-color: #81A1C1;
 }
 
 body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: var(--main-bg-color);
+    /* Font */
+    font-size: 1rem;
+    color: #000000;
+    font-family: monospace;
+
+    /* Color */
+    background-color: var(--background-color);
+
+    /* Grid Pattern */
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle, #a1a1a1 1px, rgba(0, 0, 0, 0) 1px);
+
+    
+}
+
+
+.n_raised { /* Neumorphic raised card effect */
+
+    background: #f2f2f2;
+    box-shadow:  20px 20px 60px #cecece,
+                 -20px -20px 60px var(--background-color);
+
 
 }
 
-.hero {
-    /* Sizing */
-    width: 100vw;
+
+
+/* Intro Section */
+
+#intro {
     height: 100vh;
-    max-width: 100%;
+    width: 100%;
 
-    /* Flexbox */
     display: flex;
-    justify-content: center;
-    align-items: center;
 
-    /* Text Style */
-    text-align: center;
-    color: var(--main-bg-color);
-
-    /* Background Styles */
-    background-image: url('images/hero.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: local;
 }
 
-.hero h1{
-    /* Text Style */
-    font-size: 5em;
 
-    /* Position */
-    position: absolute;
-    left: 200px;
-    top: 200px;
-}
-
-h2{
-    font-weight: bold;
-    color: white;
-    font-size: 5em;
-    rotate: deg;
-}
-
-#skills{
-    /* Sizing */
-    height: fit-content;
-
-    /* Flexbox */
+#intro > div{ /* Ensures that Rohan Raj label is slightly above center */
+    height: 75%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    margin-left: 100px;
+    padding: 30px;
 }
 
-#cards {
-    /* Sizing */
-    margin-top: 100px;
-    margin-bottom: 100px;
-    width: 70%;
-    height: 70%;
+#intro > div > div{ /* Contains the elements that make up Rohan Raj and social contacts */
+    display: flex;
+    align-self: center;
+    max-height: 120px;
 
-    /* Grid */
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-
-
-}
-
-.card{
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
 
-    /* Border */
-    border-style:solid;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
 
-    /* Sizing */
-    min-width: 200px;
-    aspect-ratio: 1.4;
-    display: block;
+    overflow: hidden;
 
-    overflow: visible;
+    flex-direction: column;
+
+    border-radius: 20px;
+
 }
 
-.card:hover{
-    transform: scale(1.1);
+#intro > div > div >h1{
+    /* Rohan Raj Label */
+
+    /* Font */
+    color: #383838;
+    font-size: 100px;
+    width:fit-content;
+    height: fit-content;
+
+    /* Alignment */
+    display: flex;
+    align-self:auto;
+
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+
+    user-select: none;
+}
+
+#intro > div > div > div{ /*This div contains social contacts */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+#intro > div > div > div > a{ /* Defines the css for hyperlinks */
+    width: 32px;
+    height: 32px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#intro > div > div:hover{ /* Hover effect that expands the card when hovered over */
+    max-height: 200px;
 }
 
 
+/* Skills Section */
 
-.card-title{
+h2{
+    /* Center Horizontally */
+    margin: auto;
+    width: fit-content;
 
-    border-style: solid;
-    border-width: 5px;
-    border: black;
-
-    position:absolute;
-    top: 30px;
-    left: 50px;
-
-    /* Text Style */
-    /* background: -webkit-linear-gradient(0deg, #88C0D0, #8FBCBB);
-    background-clip: content-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    color: white !important;
-
-    font-size: 2em;
+    /* Font */
     font-weight: bold;
-    margin-left: 20px;
+    font-size: 7em;
+    color: var(--heading-color);
+
+    padding-bottom: 30px;
 }
 
-.card > p{
-    color: rgb(204, 204, 204);
+
+#skills > div{ /* Div containing the cards */
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
 }
 
 
+.skill_card{
 
-.card > img{
-    opacity: 08;
-    height: 100px;
-    width: auto;
+    /* Positioning */
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 30px;
+
+    border-radius: 20px;
+
+    transition: all 0.1s;
+}
+
+.skill_card:hover{
+    transform: rotate(1deg);
+    scale: 1.1;
+}
+
+.skill_card > .skill_card_heading{
+
+    /*Positioning*/
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    /* Font */
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--accent-color);
+    -webkit-text-stroke: 1px #39a5db;
+
 }
 
 
